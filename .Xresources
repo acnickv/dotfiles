@@ -1,0 +1,66 @@
+*saveLines: 5000
+*customization: -color
+xterm*background: black
+xterm*foreground: green
+xterm*geometry: 120x40
+
+URxvt*loginShell:true
+URxvt*transparent:true
+URxvt*shading:20
+URxvt*background:Black
+URxvt*foreground:White
+URxvt*scrollBar:true
+URxvt*scrollBar_right:true
+URxvt*scrollBar_floating:false
+URxvt*scrollstyle:plain
+URxvt*secondaryScroll:true
+
+URxvt*termName: rxvt-unicode-256color
+
+rxvt.loginShell:true
+rxvt.transparent:true
+rxvt.shading:5
+rxvt.background:Black
+rxvt.foreground:White
+rxvt.scrollBar:true
+rxvt.scrollBar_right:true
+rxvt.scrollBar_floating:false
+rxvt.scrollstyle:plain
+rxvt.secondaryScroll:true
+
+! how many lines you want it to save per session
+URxvt*saveLines:32767
+URxvt*troughColor:#000000
+URxvt*scrollColor:#222222
+
+rxvt.saveLines:32767
+rxvt.troughColor:#000000
+rxvt.scrollColor:#222222
+
+! Set the font(s) for the urxvt terminal
+URxvt*font: xft:Inconsolata:size=12:antialias=true
+
+! with this set to true, when an app sends a bell to the terminal, awesome hilights the appropriate tag(s) 
+URxvt*urgentOnBell: true
+rxvt.urgentOnBell: true
+
+! these three lines enable clicking on links to open them 
+! if you want to enable tab support, append ,tabbed to the next line
+! then use shift+down arrow to create tabs and shift+{left,right} arrows to switch between them
+URxvt*perl-ext-common: default,matcher,-option-popup,-selection-popup,-realine,font-size
+URxvt*matcher.button: 1
+rxvt.perl-ext-common: default,matcher,-option-popup,-selection-popup,-realine,font-size
+rxvt.matcher.button: 1
+! dont forget to change this to your favorite browser
+URxvt*urlLauncher: chromium
+
+! Set underlining to be enabled, and also call when prompted for opening
+URxvt*url-select.underline: true
+URxvt*url-select.launcher: /usr/bin/xdg-open
+
+! Leverage functionality to allow on-the-fly font size changes, both for the current terminal as well as all terminals
+URxvt*keysym.C-Up:     perl:font-size:increase
+URxvt*keysym.C-Down:   perl:font-size:decrease
+URxvt*keysym.C-S-Up:   perl:font-size:incglobal
+URxvt*keysym.C-S-Down: perl:font-size:decglobal
+
