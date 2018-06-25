@@ -1,0 +1,12 @@
+[Unit]
+Description=User ssh agent daemon
+
+[Service]
+Type=forking
+Environment=SSH_AUTH_SOCK=%t/ssh-agent.socket
+ExecStartPre=/usr/bin/echo 'starting agent' >> ~/ssh-agent-daemon.log
+ExecStart=/usr/bin/ssh-agent -a $SSH_AUTH_SOCK
+ExecStartPost=/usr/bin/echo 'ran agent service' >> ~/ssh-agent-daemon.log
+
+[Install]
+WantedBy=default.target

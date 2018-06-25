@@ -1,0 +1,12 @@
+[Unit]
+Description=Random wallpaper with feh
+
+[Service]
+Type=oneshot
+EnvironmentFile=%h/.wallpaper.conf
+Environment="WallpaperFile=$(find ${WALLPATH} | shuf | head -n 1)"
+ExecStart=/bin/bash -c 'echo Loading ["${WALLPATH}"]["${WallpaperFile}"] && /usr/bin/feh -V --bg-max "${WallpaperFile}"'
+
+
+[Install]
+WantedBy=default.target

@@ -180,7 +180,7 @@ workspace 9 output Virtual2
 exec --no-startup-id /usr/bin/vmware-user-suid-wrapper
 
 # Configure for dual monitors initially
-exec --no-startup-id ~/.i3/full_dual_mock.sh
+# exec --no-startup-id ~/.i3/full_dual_mock.sh
 
 # Startup the schedule for the wallpaper switcher
 exec --no-startup-id "systemctl --user start feh-wallpaper.service" 
