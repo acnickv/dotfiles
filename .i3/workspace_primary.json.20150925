@@ -91,14 +91,12 @@
                "x": 2,
                "y": 18
             },
-            "name": "Atom",
+            "name": "Code",
             "percent": 1,
             "swallows": [
                {
-                "class": "^Atom$",
-                "instance": "^atom$",
-                // "title": "^snippets\\.md\\ \\-\\ \\/home\\/nvalentino\\/Documents\\/cms_ffm\\/notes\\ \\-\\ Atom$",
-                // "transient_for": "^$",
+                "class": "^Code$",
+                "instance": "^code$",
                 "window_role": "^browser-window$"
                }
             ],

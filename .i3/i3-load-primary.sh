@@ -15,9 +15,4 @@ if [ ! -x /usr/bin/urxvt ] ; then {
 }
 fi
 
-[ -x /usr/bin/atom ] && /usr/bin/atom -n ~/work/notes/notes.md
-#[ -x /usr/bin/atom ] && /usr/bin/atom ~/notes.md ~/snippets.md &
-#[ -x /usr/bin/atom ] && /usr/bin/atom ~/Documents/cms_ffm/notes/notes.md ~/Documents/cms_ffm/notes/note    s_devworkstationvm.md ~/Documents/cms_ffm/notes/snippets.md &
-# [ -x /usr/bin/pidgin ] && /usr/bin/pidgin &
-#[ -x ~/bin/sublime_text ] && ~/bin/sublime_text ~/Documents/cms_ffm/notes/notes.md ~/Documents/cms_ffm/notes/notes_devworkstationvm.md ~/Documents/cms_ffm/notes/snippets.md &
-
+[ -x /usr/bin/code ] && /usr/bin/code -n ~/work/notes/
