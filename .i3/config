@@ -175,7 +175,9 @@ bindsym $mod+x [urgent=latest] focus
 #  When opening Chrome, but the browser on Workspace 9 and when Workspace 9 is 
 #+ created, put it on the second virtual screen (if one exists)
 assign [class="Google-chrome"] 9
+assign [class="Firefox"] 10
 workspace 9 output Virtual2
+workspace 10 output Virtual2
 
 exec --no-startup-id /usr/bin/vmware-user-suid-wrapper
 
