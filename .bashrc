@@ -17,10 +17,12 @@ function load-sshkeys() {
 }
 
 parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
 
-  # Adjust the definitions of color for directories and symbolic links:
+export PS1="\e[90m[\u@\h \W] \D{%F %T}\n\e[92m\$(parse_git_branch)\e[0m\$ "
+
+# Adjust the definitions of color for directories and symbolic links:
 #  - directories will now be a bold purple / magenta
 #  - symlinks will now be a bold, underlined purple / magenta
 export LS_COLORS=$LS_COLORS:'di=1;35:ln=1;4;35'
