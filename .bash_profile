@@ -22,4 +22,4 @@ export PATH EDITOR VISUAL
 systemctl --user import-environment PATH
 systemctl --user import-environment DISPLAY
 
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+# export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
