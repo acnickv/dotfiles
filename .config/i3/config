@@ -150,10 +150,10 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         position top
-        status_command /usr/bin/i3status -c ~/.i3/i3status.conf
+        status_command /usr/bin/i3status -c ~/.config/i3/i3status.conf
 }
 
-bindsym $mod+p exec ~/.i3/i3-load-primary.sh
+bindsym $mod+p exec ~/.config/i3/i3-load-primary.sh
 
 #  Shift the primary browser from firefox to google chrome
 bindsym $mod+Ctrl+c exec /usr/bin/google-chrome https://calt.cms.gov
@@ -166,8 +166,8 @@ bindsym $mod+Ctrl+j exec --no-startup-id "i3-input -F 'exec --no-startup-id /usr
 bindsym $mod+Ctrl+i exec --no-startup-id "i3-input -F 'exec --no-startup-id find ${HOME}/work/ -type d -iname %s | xargs /usr/bin/atom -n ' -P 'Project Name: '"; focus
 
 
-bindsym $mod+m exec ~/.i3/notify_publicip.sh
-bindsym $mod+Ctrl+p exec ~/.i3/generate_random_string.sh
+bindsym $mod+m exec ~/.config/i3/notify_publicip.sh
+bindsym $mod+Ctrl+p exec ~/.config/i3/generate_random_string.sh
 
 #  Add a keystroke to jump to the latest urgent notification
 bindsym $mod+x [urgent=latest] focus
@@ -193,7 +193,9 @@ exec --no-startup-id /usr/bin/parcellite
 # Startup a simple policy authentication agent
 exec --no-startup-id /usr/bin/lxpolkit
 
+exec --no-startup-id ~/.config/i3/init-keyring.sh
+
 # Setup the primary user workspace
-exec --no-startup-id ~/.i3/i3-load-primary.sh
-exec --no-startup-id ~/.i3/i3-load-web.sh
+exec --no-startup-id ~/.config/i3/i3-load-primary.sh
+exec --no-startup-id ~/.config/i3/i3-load-web.sh
 

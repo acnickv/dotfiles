@@ -4,7 +4,7 @@
 # FIXME: This does not currently work.
 # kill any windows that might exist within the first workspace.  then load the primary layout
 i3-msg 'focus parent; focus parent; focus parent; focus parent; focus parent; focus parent; focus parent; kill'
-i3-msg 'append_layout /home/nvalentino/.i3/workspace-ide.json'
+i3-msg 'append_layout /home/nvalentino/.config/i3/workspace-ide.json'
 
 
 # Start programs

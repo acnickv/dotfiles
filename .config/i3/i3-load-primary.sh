@@ -2,7 +2,7 @@
 
 # kill any windows that might exist within the first workspace.  then load the primary layout
 i3-msg 'workspace 1; focus parent; focus parent; focus parent; focus parent; focus parent; focus parent; focus parent; kill'
-i3-msg 'workspace 1; append_layout /home/nvalentino/.i3/workspace_primary.json'
+i3-msg 'workspace 1; append_layout /home/nvalentino/.config/i3/workspace_primary.json'
 
 
 # Start programs
