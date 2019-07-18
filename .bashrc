@@ -20,7 +20,7 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
 
-export PS1="\e[90m[\u@\h \W] \D{%F %T}\n\e[92m\$(parse_git_branch)\e[0m\$ "
+export PS1="\[\e[90m\][\u@\h \W] \D{%F %T}\n\[\e[92m\]\$(parse_git_branch)\[\e[0m\]\$ "
 
 # Adjust the definitions of color for directories and symbolic links:
 #  - directories will now be a bold purple / magenta

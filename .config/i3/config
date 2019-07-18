@@ -156,11 +156,11 @@ bar {
 bindsym $mod+p exec ~/.config/i3/i3-load-primary.sh
 
 #  Shift the primary browser from firefox to google chrome
-bindsym $mod+Ctrl+c exec /usr/bin/google-chrome https://calt.cms.gov
-bindsym $mod+Ctrl+g exec /usr/bin/google-chrome https://github.cms.gov
+bindsym $mod+Ctrl+c exec /usr/bin/firefox https://confluence.cms.gov
+bindsym $mod+Ctrl+g exec /usr/bin/firefox https://github.cms.gov
 
 #  Update the call for jira. Now, prompt for a specific ticket number to be provided and make the call to chrome, then transfer focus to that window
-bindsym $mod+Ctrl+j exec --no-startup-id "i3-input -F 'exec --no-startup-id /usr/bin/google-chrome https://jira.cms.gov/browse/%s' -P 'Jira Ticket: '" ; focus
+bindsym $mod+Ctrl+j exec --no-startup-id "i3-input -F 'exec --no-startup-id /usr/bin/firefox https://jira.cms.gov/browse/%s' -P 'Jira Ticket: '" ; focus
 
 # Create ability to open an "IDE" based on the name of a project / projects
 bindsym $mod+Ctrl+i exec --no-startup-id "i3-input -F 'exec --no-startup-id find ${HOME}/work/ -type d -iname %s | xargs /usr/bin/atom -n ' -P 'Project Name: '"; focus
@@ -194,6 +194,9 @@ exec --no-startup-id /usr/bin/parcellite
 exec --no-startup-id /usr/bin/lxpolkit
 
 exec --no-startup-id ~/.config/i3/init-keyring.sh
+
+# Startup the NetworkManager Applet
+exec --no-startup-id /usr/bin/nm-applet
 
 # Setup the primary user workspace
 exec --no-startup-id ~/.config/i3/i3-load-primary.sh

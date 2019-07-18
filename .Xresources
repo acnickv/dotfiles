@@ -3,6 +3,7 @@
 xterm*background: black
 xterm*foreground: green
 xterm*geometry: 120x40
+URxvt*geometry: 120x40
 
 URxvt*loginShell:true
 URxvt*transparent:true
