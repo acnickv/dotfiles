@@ -1,0 +1,416 @@
+/* ================================================================
+   Waybar — Nord Theme
+   ~/.config/waybar/style.css
+   
+   Nord Palette:
+     Polar Night  #2E3440  #3B4252  #434C5E  #4C566A
+     Snow Storm   #D8DEE9  #E5E9F0  #ECEFF4
+     Frost        #8FBCBB  #88C0D0  #81A1C1  #5E81AC
+     Aurora       #BF616A  #D08770  #EBCB8B  #A3BE8C  #B48EAD
+   ================================================================ */
+
+/* ── Color variables (GTK3 CSS @define-color) ─────────────────── */
+@define-color nord0  #2E3440;
+@define-color nord1  #3B4252;
+@define-color nord2  #434C5E;
+@define-color nord3  #4C566A;
+@define-color nord4  #D8DEE9;
+@define-color nord5  #E5E9F0;
+@define-color nord6  #ECEFF4;
+@define-color nord7  #8FBCBB;
+@define-color nord8  #88C0D0;
+@define-color nord9  #81A1C1;
+@define-color nord10 #5E81AC;
+@define-color nord11 #BF616A;
+@define-color nord12 #D08770;
+@define-color nord13 #EBCB8B;
+@define-color nord14 #A3BE8C;
+@define-color nord15 #B48EAD;
+
+
+/* ── Global reset & typography ───────────────────────────────── */
+* {
+    font-family: 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
+    font-size: 12px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* ── Bar window ───────────────────────────────────────────────── */
+window#waybar {
+    background-color: @nord0;
+    color:            @nord4;
+    border-bottom:    2px solid @nord1;
+    transition: background-color 0.3s ease;
+}
+
+/* Bar on a focused output gets a slightly lighter background */
+window#waybar.focused {
+    background-color: @nord1;
+}
+
+/* Hidden state (e.g. auto-hide) */
+window#waybar.hidden {
+    opacity: 0.3;
+}
+
+
+/* ── Tooltip ──────────────────────────────────────────────────── */
+tooltip {
+    background-color: @nord1;
+    border:           1px solid @nord3;
+    border-radius:    6px;
+    color:            @nord4;
+}
+
+tooltip label {
+    color: @nord4;
+}
+
+
+/* ── Generic module baseline ──────────────────────────────────── */
+.module {
+    padding: 0 10px;
+    color:   @nord4;
+}
+
+/* Hover highlight for any module */
+button.module:hover,
+label.module:hover {
+    background-color: @nord2;
+    box-shadow: inset 0 -2px @nord8;
+}
+
+
+/* ── Workspaces ───────────────────────────────────────────────── */
+#workspaces {
+    background-color: @nord1;
+    margin: 2px 4px;
+    border-radius: 4px;
+}
+
+#workspaces button {
+    padding:          0 8px;
+    color:            @nord3;
+    background-color: transparent;
+    border-radius:    4px;
+    transition:       background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Focused workspace */
+#workspaces button.focused,
+#workspaces button.active {
+    background-color: @nord2;
+    color:            @nord6;
+    box-shadow:       inset 0 -2px @nord8;
+}
+
+/* Visible on another output (multi-monitor) */
+#workspaces button.visible {
+    background-color: @nord1;
+    color:            @nord9;
+    box-shadow:       inset 0 -2px @nord10;
+}
+
+/* Workspace with urgency hint */
+#workspaces button.urgent {
+    background-color: @nord11;
+    color:            @nord6;
+}
+
+#workspaces button:hover {
+    background-color: @nord2;
+    color:            @nord5;
+    box-shadow:       inset 0 -2px @nord7;
+}
+
+
+/* ── Sway/Hyprland mode indicator (resize, etc.) ──────────────── */
+#mode {
+    background-color: @nord13;
+    color:            @nord0;
+    padding:          0 10px;
+    font-weight:      bold;
+    border-radius:    4px;
+    margin:           2px 4px;
+}
+
+
+/* ── Active window title ──────────────────────────────────────── */
+#window {
+    color:       @nord4;
+    padding:     0 10px;
+    font-style:  italic;
+}
+
+window#waybar.solo #window {
+    /* Dimmer when only one window exists */
+    color: @nord3;
+}
+
+
+/* ── Clock ────────────────────────────────────────────────────── */
+#clock {
+    color:       @nord8;
+    font-weight: bold;
+    padding:     0 12px;
+}
+
+#clock:hover {
+    background-color: @nord2;
+    box-shadow:       inset 0 -2px @nord8;
+}
+
+
+/* ── CPU ──────────────────────────────────────────────────────── */
+#cpu {
+    color:   @nord9;
+    padding: 0 10px;
+}
+
+#cpu.warning {
+    color: @nord13;
+}
+
+#cpu.critical {
+    color: @nord11;
+    animation: blink 1s step-end infinite;
+}
+
+
+/* ── Memory ───────────────────────────────────────────────────── */
+#memory {
+    color:   @nord15;
+    padding: 0 10px;
+}
+
+#memory.warning {
+    color: @nord13;
+}
+
+#memory.critical {
+    color: @nord11;
+    animation: blink 1s step-end infinite;
+}
+
+
+/* ── Disk ─────────────────────────────────────────────────────── */
+#disk {
+    color:   @nord7;
+    padding: 0 10px;
+}
+
+#disk.warning {
+    color: @nord13;
+}
+
+#disk.critical {
+    color: @nord11;
+}
+
+
+/* ── Temperature ──────────────────────────────────────────────── */
+#temperature {
+    color:   @nord4;
+    padding: 0 10px;
+}
+
+#temperature.critical {
+    color:     @nord11;
+    animation: blink 1s step-end infinite;
+}
+
+
+/* ── Network ──────────────────────────────────────────────────── */
+#network {
+    color:   @nord14;
+    padding: 0 10px;
+}
+
+#network.disconnected,
+#network.disabled {
+    color: @nord3;
+}
+
+#network.linked {
+    color: @nord9;
+}
+
+#network.ethernet {
+    color: @nord14;
+}
+
+#network.wifi {
+    color: @nord7;
+}
+
+
+/* ── Pulseaudio / Wireplumber (volume) ────────────────────────── */
+#pulseaudio,
+#wireplumber {
+    color:   @nord9;
+    padding: 0 10px;
+}
+
+#pulseaudio.muted,
+#wireplumber.muted {
+    color: @nord3;
+}
+
+#pulseaudio.bluetooth {
+    color: @nord15;
+}
+
+
+/* ── Backlight ────────────────────────────────────────────────── */
+#backlight {
+    color:   @nord13;
+    padding: 0 10px;
+}
+
+
+/* ── Battery ──────────────────────────────────────────────────── */
+#battery {
+    color:   @nord14;
+    padding: 0 10px;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @nord7;
+}
+
+#battery.full {
+    color: @nord14;
+}
+
+#battery.good {
+    color: @nord14;
+}
+
+#battery.warning:not(.charging) {
+    color: @nord13;
+}
+
+#battery.critical:not(.charging) {
+    color:     @nord11;
+    animation: blink 0.75s step-end infinite;
+}
+
+
+/* ── Bluetooth ────────────────────────────────────────────────── */
+#bluetooth {
+    color:   @nord15;
+    padding: 0 10px;
+}
+
+#bluetooth.off,
+#bluetooth.disabled {
+    color: @nord3;
+}
+
+#bluetooth.connected {
+    color: @nord7;
+}
+
+
+/* ── Idle inhibitor ───────────────────────────────────────────── */
+#idle_inhibitor {
+    color:   @nord3;
+    padding: 0 10px;
+}
+
+#idle_inhibitor.activated {
+    color: @nord13;
+}
+
+
+/* ── MPD / MPRIS ──────────────────────────────────────────────── */
+#mpd {
+    color:   @nord8;
+    padding: 0 10px;
+}
+
+#mpd.disconnected {
+    color: @nord3;
+}
+
+#mpd.stopped {
+    color: @nord3;
+}
+
+#mpd.paused {
+    color: @nord9;
+}
+
+#mpris {
+    color:   @nord8;
+    padding: 0 10px;
+}
+
+
+/* ── Tray ─────────────────────────────────────────────────────── */
+#tray {
+    padding: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @nord11;
+}
+
+
+/* ── Notifications (swaync) ───────────────────────────────────── */
+#custom-notification,
+#sway-notification-center {
+    color:   @nord4;
+    padding: 0 10px;
+}
+
+#custom-notification.dnd,
+#sway-notification-center.dnd {
+    color: @nord3;
+}
+
+#custom-notification.inhibited {
+    color: @nord13;
+}
+
+
+/* ── Custom modules (generic) ─────────────────────────────────── */
+#custom-power,
+#custom-menu,
+#custom-launcher {
+    color:   @nord4;
+    padding: 0 10px;
+}
+
+#custom-power:hover {
+    background-color: @nord11;
+    color:            @nord6;
+    border-radius:    4px;
+}
+
+
+/* ── Separators ───────────────────────────────────────────────── */
+#custom-separator {
+    color:   @nord3;
+    padding: 0 4px;
+}
+
+
+/* ── Blink animation (used for critical states) ───────────────── */
+@keyframes blink {
+    to {
+        color:            @nord0;
+        background-color: @nord11;
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "Nord",
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "dev.containers.dockerPath": "podman",
+    "chat.viewSessions.orientation": "stacked",
+    "redhat.telemetry.enabled": false,
+    "chat.tools.urls.autoApprove": {
+        "https://code.visualstudio.com": true,
+        "https://github.com/microsoft/vscode/wiki/*": true,
+        "https://github.com/sst/opencode": true,
+        "https://github.com/sst": true,
+        "https://github.com": true,
+        "https://opencode.ai": true
+    }
+}

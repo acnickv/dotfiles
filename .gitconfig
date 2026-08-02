@@ -8,8 +8,6 @@
 	name = nickv
 	email = acnickv@gmail.com
         signingkey = ~/.ssh/id_github_signing
-        # signingkey = ssh-ed25519 wJBIVUNetSFurmITxWTE6n1cORk7uILEFLoptXMuJN8
-	# signingkey = ssh-ed25519 ....
 [alias]
 	unstage = reset HEAD --
 	last = log --show-signature -1 HEAD
