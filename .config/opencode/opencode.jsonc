@@ -1,0 +1,20 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "litellm": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LiteLLM",
+      "options": {
+        "baseURL": "http://localhost:4000/v1"
+      },
+      "models": {
+        "titan-embed": {
+          "name": "titan"
+        },
+        "claude-sonnet": {
+          "name": "Claude Sonnet"
+        },
+      }
+    }
+  }
+}

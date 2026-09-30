@@ -1,0 +1,60 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	name = nickv
+	email = acnickv@gmail.com
+        signingkey = ~/.ssh/id_github_signing
+        # signingkey = ssh-ed25519 wJBIVUNetSFurmITxWTE6n1cORk7uILEFLoptXMuJN8
+	# signingkey = ssh-ed25519 ....
+[alias]
+	unstage = reset HEAD --
+	last = log --show-signature -1 HEAD
+	ls = log --oneline --show-signature
+	pf = push --force-with-lease
+	sl = stash list --pretty=format:'%gd - %ci - %s'
+[fetch]
+	prune = true
+[commit]
+	gpgsign = true
+	verbose = true
+[gpg]
+	format = ssh
+[tag]
+	gpgsign = true
+[gpg "ssh"]
+	allowedSignersFile = ~/.config/git/allowed_signers
+	defaultKeyCommand = sh -c \"echo key::$(ssh-keygen -y -f ~/.ssh/id_github_signing)\"
+[pull]
+	twohead = recursive
+	ff = true
+[push]
+	autoSetupRemote = true
+	useForceIfIncludes = true
+[init]
+	defaultBranch = main
+[bash]
+	showDirtyState = true
+[merge]
+	ff = false
+[safe]
+	directory = /src
+[core]
+	pager = less -FRX
+[diff]
+	tool = nvimdiff
+[difftool]
+	prompt = false
+[difftool "nvimdiff"]
+	cmd = nvim -d "$LOCAL" "$REMOTE"
+[merge]
+	tool = nvimdiff
+[mergetool]
+	prompt = true
+[clone]
+	defaultRemoteName = origin
+[submodule]
+	recurse = true

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -euo pipefail -o noclobber
+
+git \
+	--git-dir=${HOME}/src/dotfiles \
+	--work-tree=${HOME} \
+	"$@"
