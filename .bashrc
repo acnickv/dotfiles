@@ -24,6 +24,13 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
+# pnpm
+export PNPM_HOME="/home/nickv/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/home/nickv/.lmstudio/bin"
 # End of LM Studio CLI section

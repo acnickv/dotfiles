@@ -137,6 +137,12 @@ exec_always pkill swayidle; swayidle -w \
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
+
+    # Move to next and previous workspaces
+    bindsym $mod+Ctrl+$right workspace next
+    bindsym $mod+Ctrl+Right workspace next
+    bindsym $mod+Ctrl+$left workspace prev
+    bindsym $mod+Ctrl+Left workspace prev
 #
 # Layout stuff:
 #
@@ -220,10 +226,17 @@ bar {
     swaybar_command waybar
 }
 
-
 exec gammastep-indicator
 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-exec eval $(gnome-keyring-deaemon --start --components=secrets,ssh)
+exec eval $(gnome-keyring-daemon --start --components=secrets,ssh)
+
+for_window [app_id="org.gnome.seahorse.Application"] floating enable
+for_window [app_id="thunar"] floating enable
+for_window [app_id="blueman-manager"] floating enable
+
+bindswitch lid:on exec swaylock
+
+for_window [app_id="org.mozilla.firefox"] border none
 
 include /etc/sway/config.d/*
